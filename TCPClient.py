@@ -7,7 +7,7 @@ host = socket.gethostname()
 port = 444
 
 clientsocket.connect((host, port))
-message = clientsocket.recv(1024)
+message = clientsocket.recv(1024) # sets max amt of data recieved by client
 
 clientsocket.close()
 print(message.decode('ascii'))
