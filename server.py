@@ -7,6 +7,8 @@ serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
 #store the host name
 host = socket.gethostbyname()
+# host = '192.168.192.1' if u want to this specifically
+
 
 # What port to listen
 port = 444
