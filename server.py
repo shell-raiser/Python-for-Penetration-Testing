@@ -24,8 +24,8 @@ serversocket.listen(3) #how many computers to connect from
 while True:
     #start the connection
     clientsocket, address = serversocket.accept()
-    print("Received connection from " % str(address))
+    print("Received connection from %s " % str(address))
     message = 'Thank you for connecting to the server' + '\r\n'
-    clientsocket.send(message)
+    clientsocket.send(message.encode('ascii'))
     #close the client socket, not server socket
     clientsocket.close()
