@@ -1,5 +1,6 @@
 from email import message
 from http import client
+from multiprocessing import connection
 import socket
 # AF_INET because IPV4, SOCK_STREAM specifies what type of connection, Eg TCP
 serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -19,6 +20,7 @@ serversocket.listen(3) #how many computers to connect from
 
 #how many requests to allow
 while True:
+    #start the connection
     clientsocket, address = serversocket.accept()
     print("Received connection from " % str(address))
     message = 'Thank you for connecting to the server' + '\r\n'
